@@ -1,21 +1,32 @@
 var time = 1000;
 const rules = document.getElementById('accordion')
 const strBtn = document.getElementById('strBtn'); 
+const stopBtn = document.getElementById('stopBtn'); 
 const playArea = document.getElementById('genNum')
+var clickCount = 0;
+start()
 
 strBtn.addEventListener('click', () => {
-  start(),
-  strBtn.style.display = 'none',
+  startCheck()
+  // strBtn.style.display = 'none',
   endBtn.style.display = 'visible',
-  playArea.style.display= 'flex'
+  playArea.style.display= 'flex',
+  clickCount = 0;
+  return clickCount
 });
+
+stopBtn.addEventListener('click', () => {
+  clickCount = 1
+  return clickCount
+})
 
 // document.getElementById('button').addEventListener('click', () => {requestAnimationFrame(update)})
 
 function start(){
+  
   let canvas = document.getElementById('board');
   const ctx = canvas.getContext('2d');
-  let i = 0
+  let i = 0;
   const resolution = 10;
   canvas.width = 700;
   canvas.height = 700;
@@ -40,9 +51,18 @@ function start(){
     playArea.innerHTML = i 
   } 
 
+setInterval( function startCheck(){
+  if (clickCount === 0){
+    console.log("hello")
+    requestAnimationFrame(update)
+  }
+  else{
+    return
+  }
+},time) 
+
   
-  requestAnimationFrame(update)
-  setInterval(function () {requestAnimationFrame(update)},time)
+ 
 
   function nextGen(grid){
     const nextGen = grid.map(arr => [...arr]);

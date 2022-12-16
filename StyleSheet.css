@@ -25,8 +25,8 @@ body{
   flex-wrap: wrap;
 }
 
-#endBtn{
-  display: none;
+#stopBtn{
+  display: hidden;
 }
 
 .container{
@@ -49,10 +49,19 @@ body{
 }
 
 #accordion > h3{
-  /* width: 100%; */
+  width: 500px;
   background-color: antiquewhite;
   border-radius: 5px;
   text-align: center;
   padding: 5px;
   transition: height 1s, width 1s;
+}
+
+#accordion{
+  background-color: rgb(156, 129, 94);
+}
+
+#accordion > div{
+  width: 450px;
+  height: 640px
 }
