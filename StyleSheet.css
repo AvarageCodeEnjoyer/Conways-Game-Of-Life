@@ -1,0 +1,58 @@
+body{
+  background-color: rgb(182, 130, 95);
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+#strBtn{
+  width: 100px;
+  height: 50px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  /* position: absolute; */
+
+}
+
+#playArea{
+  display: hidden;
+  flex-direction: column;
+  align-items: center;
+}
+
+#genNum{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#endBtn{
+  display: none;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100vw;
+  height: 800px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#accordion{
+  /* position: absolute; */
+  left: 300px;
+  bottom: 100px;
+  
+}
+
+#accordion > h3{
+  /* width: 100%; */
+  background-color: antiquewhite;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+  transition: height 1s, width 1s;
+}
